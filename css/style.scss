@@ -15,7 +15,7 @@ $size-height: 2rem;
 @mixin color-text {
   color: $color-menu;
   font-weight: 700;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 }
 .d-flex {
   display: flex;
@@ -77,11 +77,11 @@ li {
   list-style: none;
 }
 .container {
-  max-width: 1200px;
-  margin: auto;
+  margin-left: 100px;
+  margin-right: 100px;
 }
 // =======disable scroll==========
-.disable-scroll{
+.disable-scroll {
   overflow-y: hidden;
 }
 /////FIXED HEADER
@@ -106,7 +106,7 @@ li {
   display: none;
 }
 // =====scroll to top =========
-#btn-backtotop{
+#btn-backtotop {
   position: fixed;
   right: 0;
   bottom: 0;
@@ -116,10 +116,10 @@ li {
   border: 3px solid $color-menu;
   border-radius: 10px;
 }
-.show-btt{
+.show-btt {
   display: block;
 }
-.hide-btt{
+.hide-btt {
   display: none;
 }
 .wrapper {
@@ -206,12 +206,18 @@ li {
         }
         .btn-menu-toggle {
           display: none;
+          background: none;
+          border: none;
+          font-size: large;
           @media (max-width: 768px) {
             display: block;
           }
         }
         .btn-search {
           display: none;
+          background: none;
+          border: none;
+          font-size: large;
           @media (max-width: 768px) {
             display: block;
           }
@@ -230,8 +236,8 @@ li {
     display: none;
     position: absolute;
     left: 0;
-    top: 0;
     z-index: 9999999;
+    transition: all 3s ease-in-out;
     height: 100%;
     background-color: $color-dark;
     .container {
@@ -328,6 +334,12 @@ li {
       flex-wrap: wrap;
       margin-left: calc(-1 * var(--spacing));
       margin-bottom: calc(-1 * var(--spacing));
+      @media (max-width: 768px) {
+        --column: 2;
+      }
+      @media (max-width: 320px) {
+        --column: 1;
+      }
     }
     .flex > * {
       margin-left: var(--spacing);
@@ -569,6 +581,36 @@ li {
               font-size: $size-medium;
             }
           }
+          @media (max-width: 768px) {
+            .row__list-first {
+              flex: 100%;
+            }
+            .row__list-second {
+              flex: 100%;
+            }
+            .row__list-third {
+              flex: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // ***********PAGE ABOUT************
+
+  .about {
+    .container {
+      .color-blue.flex-center.mt-2 {
+      }
+      .about-line {
+        display: flex;
+        justify-content: center;
+      }
+      div {
+        b {
+        }
+        p {
         }
       }
     }
